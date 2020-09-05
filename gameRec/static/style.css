@@ -4,7 +4,7 @@
  * Email: info@themezy.com
  * URL: http://themezy.com
  */
-/*=========================================== 
+/*===========================================
  * Importing CSS Libraries
  *===========================================*/
 article,
@@ -262,6 +262,7 @@ body {
   font-size: 14px;
   font-weight: 300;
   line-height: normal;
+  overflow: visible;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -494,6 +495,10 @@ form textarea {
   background-color: #e9e9e9;
   color: #898e90;
 }
+.pagination .page-number {
+  cursor:pointer
+}
+
 .filter-bar .pagination a.current, .filter-bar .pagination span.current, .pagination-bar .pagination a.current, .pagination-bar .pagination span.current {
   background-color: #af4aaf;
   color: white;
@@ -2049,10 +2054,11 @@ form textarea {
 }
 
 .main-navigation {
-  *zoom: 1;
+  *
+  zoom: 1;
   margin-top: 30px;
   position: relative;
-  z-index: 999;
+  /* z-index: 999; */
   clear: both;
   width: 100%;
   background-color: white;
@@ -2366,9 +2372,11 @@ form textarea {
   padding: 0 15px;
   float: left;
   margin-bottom: 30px;
+   height: 600px;
 }
 @media screen and (max-width: 990px) {
   .product-list .product {
+    height: 600px;
     width: 50%;
   }
 }
@@ -2401,16 +2409,17 @@ form textarea {
   }
 }
 .product-list .product .figure-image {
-  border: 4px solid #dedede;
+  border: 4px solid #e6e3e3;
   border-radius: 3px;
   overflow: hidden;
   margin-bottom: 30px;
+  background-color:#e6e3e3
 }
 .product-list .product .figure-image img {
-  max-width: 100%;
+  height: 300px;
   width: 100%;
+  object-fit: contain;
   display: block;
-  height: auto;
 }
 .product-list .product .product-title {
   font-size: 18px;
@@ -2447,9 +2456,10 @@ form textarea {
 .score-desc {
   color: #666a6c;
   font-size: 10px;
-  padding: 5px;
+  padding-left: 10px;
   text-align: right;
   vertical-align: bottom;
+  float:right;
 }
 .score {
   background-color: #6c3;
@@ -2759,11 +2769,13 @@ table.cart .fa-times {
 }
 .main-content .genre {
   color: #af4aaf;
-  font-size: 24px;
+  font-size: 18px;
   text-align: left;
   margin-top:3px;
   margin-bottom: 5px;
   display: block;
+  font-weight: bold;
+  word-spacing: 5px
 }
 .main-content .company {
   color: #af4aaf;
@@ -2775,7 +2787,7 @@ table.cart .fa-times {
 }
 .main-content .release_date {
   color: #666a6c;
-  font-size: 13px;
+  font-size: 12px;
   text-align: left;
   margin-top:3px;
   margin-bottom: 5px;
@@ -2789,7 +2801,42 @@ table.cart .fa-times {
 .game_video_content .game_video{
   margin-top:60px;
   margin-bottom: 20px;
-  
+
 }
 
+ .game_search_checkbox_title{
+   font-weight:bold;
+ }
+ .game_search_platform_checkbox{
+    padding-left:10px
+    line-height:20px;
+ }
+ .game_search_genre_checkbox{
+    padding-left:10px;
+    line-height:20px;
+ }
+ .game_search_company_checkbox{
+    padding-left:8px
+ }
 
+ .inner-product .game_desc{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+
+    -webkit-box-orient:vertical;
+
+    -webkit-line-clamp:2;
+ }
+ .fullscreen {
+             background-color    :black;
+             position            :fixed;
+             left                :0;
+             top                 :0;
+             width               :100%;
+             height              :100%;
+             filter              :alpha(Opacity=50);
+             -moz-opacity        :0.5;
+             opacity             :0.5;
+             z-index             :100;
+  }

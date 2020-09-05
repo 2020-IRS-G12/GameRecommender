@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+		<title>Ecommerce Video Game | Single</title>
+
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,700|" rel="stylesheet" type="text/css">
+		<link href="../static/font/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="../static/font/lineo-icon/style.css" rel="stylesheet" type="text/css">
+
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="../static/style.css">
+
+		<!--[if lt IE 9]>
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
+
+	</head>
+
+
+	<body>
+
+		<div id="site-content">
+			<div class="site-header">
+				<div class="container">
+					<a href={{url_for('gameLibrary.index')}} id="branding">
+						<img src="../static/image/ecommerce_video_games_htmls/logo.png" alt="" class="logo">
+						<div class="logo-text">
+							<h1 class="site-title">Company name</h1>
+							<small class="site-description">Tagline goes here</small>
+						</div>
+					</a> <!-- #branding -->
+					<div class="main-navigation">
+						<div class="search-form">
+							<label id="search_btn"><img src="../static/image/ecommerce_video_games_htmls/icon-search.png"></label>
+							<input id="search_text" type="text" placeholder="Search...">
+						</div> <!-- .search-form -->
+					</div><!-- .main-navigation -->
+
+
+				</div> <!-- .container -->
+			</div> <!-- .site-header -->
+
+			<main class="main-content">
+				<div class="container">
+					<div class="page">
+
+						<div class="entry-content">
+							<div class="row">
+								<div class="col-sm-6 col-md-4">
+									<div class="product-images">
+										<figure class="large-image">
+											<a href="{{url_for('static', filename = 'image/gameImageSmall/' + gameImageInfo.imageFileName)}}"><img src="{{url_for('static', filename = 'image/gameImageSmall/' + gameImageInfo.imageFileName)}}" alt=""></a>
+										</figure>
+										<small class="score">{{gameDetail['metascore']}}</small>
+										<small class="score-desc">Metascore from metacritic</small>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-8">
+									<h2 class="entry-title">{{gameDetail['title']}}</h2>
+									<small class="platform">{{gameDetail['platform']}}{{"("}}{{gameDetail['otherPlatform']}}{{")"}}</small>
+									<small class="genre">{{gameDetail['genre']}}</small>
+									<small class="company">{{gameDetail['company']}}</small>
+                  <small class="release_date">{{gameDetail['release']}}</small>
+
+									<p>{{gameDetail['description']}}</p>
+								</div>
+							</div>
+						</div>
+						<div class="game_video_content">
+                            <video class="game_video" width="100%" controls>
+                                <source src="{{gameDetail['trailerUrl']}}" type="video/mp4">
+                            </video>
+						</div>
+						<section>
+							<header>
+								<h2 class="section-title">Recommenced</h2>
+							</header>
+							<div class="product-list">
+								<div class="product">
+									<div class="inner-product">
+										<div class="figure-image">
+											<a href="single.html"><img src="../static/image/ecommerce_video_games_htmls/dummy/game-2.jpg" alt="Game 2"></a>
+										</div>
+										<h3 class="product-title"><a href="#">Grand Theft Auto V</a></h3>
+										<small class="platform">PC, Xbox One</small>
+										<small class="genre">FPS, Open-world</small>
+									</div>
+								</div> <!-- .product -->
+
+								<div class="product">
+									<div class="inner-product">
+										<div class="figure-image">
+											<a href="single.html"><img src="../static/image/ecommerce_video_games_htmls/dummy/game-2.jpg" alt="Game 2"></a>
+										</div>
+										<h3 class="product-title"><a href="#">Grand Theft Auto V</a></h3>
+										<small class="platform">PC, Xbox One</small>
+										<small class="genre">FPS, Open-world</small>
+
+									</div>
+								</div> <!-- .product -->
+
+								<div class="product">
+									<div class="inner-product">
+										<div class="figure-image">
+											<a href="single.html"><img src="../static/image/ecommerce_video_games_htmls/dummy/game-2.jpg" alt="Game 2"></a>
+										</div>
+										<h3 class="product-title"><a href="#">Grand Theft Auto V</a></h3>
+										<small class="platform">PC, Xbox One</small>
+										<small class="genre">FPS, Open-world</small>
+									</div>
+								</div> <!-- .product -->
+
+								<div class="product">
+									<div class="inner-product">
+										<div class="figure-image">
+											<a href="single.html"><img src="../static/image/ecommerce_video_games_htmls/dummy/game-2.jpg" alt="Game 2"></a>
+										</div>
+										<h3 class="product-title"><a href="#">Grand Theft Auto V</a></h3>
+										<small class="platform">PC, Xbox One</small>
+										<small class="genre">FPS, Open-world</small>
+									</div>
+								</div> <!-- .product -->
+
+							</div> <!-- .product-list -->
+						</section>
+					</div>
+				</div> <!-- .container -->
+			</main> <!-- .main-content -->
+
+			<div class="site-footer">
+				<div class="container">
+					<div class="colophon">
+						<div class="copy">Copyright 2020 ISS-RS. Designed by Zhang Zekun, Tao Xiyan, Shi Zhaohen. All rights reserved.</div>
+
+					</div> <!-- .colophon -->
+				</div> <!-- .container -->
+			</div> <!-- .site-footer -->
+		</div>
+
+		<div class="overlay"></div>
+
+		<div class="auth-popup popup">
+			<a href="#" class="close"><i class="fa fa-close"></i></a>
+		</div> <!-- .auth-popup -->
+
+		<script src="../static/js/ecommerce_video_games_htmls/jquery-1.11.1.min.js"></script>
+		<script src="../static/js/ecommerce_video_games_htmls/plugins.js"></script>
+		<script src="../static/js/ecommerce_video_games_htmls/app.js"></script>
+		<script src="../static/js/gameSearch.js"></script>
+	</body>
+
+</html>
