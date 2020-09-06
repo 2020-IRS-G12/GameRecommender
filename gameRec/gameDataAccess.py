@@ -72,7 +72,7 @@ def getSearchGameCnt(genre = [], company = [], platform = [], keyword = ""):
     sqlCommand = "SELECT COUNT(*) FROM GameDetail WHERE gameId IN " + sqlCommand;
     if keyword != "":
         sqlCommand += " AND title LIKE '%" + keyword + "%' "
-    print(sqlCommand)
+    #print(sqlCommand)
     result = db.execute(sqlCommand)
     result = result.fetchone()['count(*)']
     #pdb.set_trace()
@@ -105,7 +105,7 @@ def getSearchGameList(page, genre = [], company = [], platform = [], keyword = "
 
     sqlCommand += " ORDER BY score DESC "
     sqlCommand += " LIMIT " + str(ITEM_ONE_PAGE) + " OFFSET " + str(ITEM_ONE_PAGE * page)
-    print(sqlCommand)
+    #print(sqlCommand)
     result = db.execute(sqlCommand)
     result = result.fetchall()
 

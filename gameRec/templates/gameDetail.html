@@ -82,51 +82,19 @@
 								<h2 class="section-title">Recommenced</h2>
 							</header>
 							<div class="product-list">
+								{% for recGame in recGameLst%}
 								<div class="product">
 									<div class="inner-product">
 										<div class="figure-image">
-											<a href="single.html"><img src="../static/image/ecommerce_video_games_htmls/dummy/game-2.jpg" alt="Game 2"></a>
+											<a href={{url_for('gameLibrary.gameDetail', gameId=recGame.gameId)}}>
+												<img src={{url_for('static', filename = 'image/gameImageSmall/' + recGame.imageFileName)}} alt="Game 2"></a>
 										</div>
-										<h3 class="product-title"><a href="#">Grand Theft Auto V</a></h3>
-										<small class="platform">PC, Xbox One</small>
-										<small class="genre">FPS, Open-world</small>
+										<h3 class="product-title"><a href={{url_for('gameLibrary.gameDetail', gameId=recGame.gameId)}}>{{recGame.title}}</a></h3>
+										<small class="platform">{{recGame.platform}}</small>
+										<small class="genre">{{recGame.genre}}</small>
 									</div>
 								</div> <!-- .product -->
-
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="../static/image/ecommerce_video_games_htmls/dummy/game-2.jpg" alt="Game 2"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Grand Theft Auto V</a></h3>
-										<small class="platform">PC, Xbox One</small>
-										<small class="genre">FPS, Open-world</small>
-
-									</div>
-								</div> <!-- .product -->
-
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="../static/image/ecommerce_video_games_htmls/dummy/game-2.jpg" alt="Game 2"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Grand Theft Auto V</a></h3>
-										<small class="platform">PC, Xbox One</small>
-										<small class="genre">FPS, Open-world</small>
-									</div>
-								</div> <!-- .product -->
-
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="../static/image/ecommerce_video_games_htmls/dummy/game-2.jpg" alt="Game 2"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Grand Theft Auto V</a></h3>
-										<small class="platform">PC, Xbox One</small>
-										<small class="genre">FPS, Open-world</small>
-									</div>
-								</div> <!-- .product -->
-
+								{% endfor %}
 							</div> <!-- .product-list -->
 						</section>
 					</div>

@@ -175,7 +175,9 @@ function refreshCheckboxes(names, selectedNames, className){
   $template.remove();
 }
 
-var spinner = new Spin.Spinner({radius: 30,top: '50%',left: '50%'});
+if(typeof Spin != "undefined"){
+  var spinner = new Spin.Spinner({radius: 30,top: '50%',left: '50%'});
+}
 function showLoadingSpinner(show){
   if(show) {
     $(".fullscreen:first").show();

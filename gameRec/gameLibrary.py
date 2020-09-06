@@ -8,9 +8,15 @@ from flask import jsonify
 from werkzeug.exceptions import abort
 from gameRec import gameDataAccess
 from gameRec.gameDataAccess import dataSingleton
+from gameRec.db import get_db
+from recommendAlgo import ContentRecommendation as cr
+from recommendAlgo import CustomizedRecommendation as cur
+from recommendAlgo import InitializationRecommendation as ir
+import json
 
 bp = Blueprint("gameLibrary", __name__)
 
+#--testcode--
 @bp.route("/testSelGameById")
 def testSelGameById():
     return str(gameDataAccess.getGameInfo([10, 20]))
@@ -33,7 +39,6 @@ def testGamePageDetail():
 
     return str(retVal)
 
-
 @bp.route("/testGameImage")
 def testGameImage():
     return str(gameDataAccess.getGameImageName([10, 20]))
@@ -48,13 +53,23 @@ def testPlatformLst():
 def testGenreLst():
     return str(dataSingleton.getGenreLst())
 
+#--testcode--
 
+def mergeRecGameLstAndImgInfo(gamelst, imglsts):
+    for i in gamelst:
+        for j  in imglsts:
+            if i['gameId']==j['gameId']:
+                i['imageFileName'] = j['imageFileName']
+    return gamelst
 
-
-
+INDEX_REC_GAME_NUM = 4
 @bp.route("/")
 def index():
-    return render_template("index.html")
+    recommendGame = ir.InitializationRecommendation().getRecommendation(get_db(),INDEX_REC_GAME_NUM)
+    recGameLst = json.loads(recommendGame)
+    recGameImageNameLst = gameDataAccess.getGameImageName([x['gameId'] for x in recGameLst])
+    recGameLst = mergeRecGameLstAndImgInfo(recGameLst, recGameImageNameLst)
+    return render_template("index.html", recGameLst = recGameLst)
 
 @bp.route("/gameDetail/<int:gameId>")
 def gameDetail(gameId):
@@ -64,7 +79,16 @@ def gameDetail(gameId):
         abort(404, "game id {0} doesn't exist.".format(gameId))
     gameDetail = gameDetail[0]
     gameImageInfo = gameImageInfo[0]
-    return render_template("gameDetail.html", gameDetail = gameDetail, gameImageInfo = gameImageInfo)
+    #import pdb; pdb.set_trace()
+    reGames = cr.ContentRecommendation().getRecommendation(get_db(), gameId, 8,
+        "./recommendAlgo/Model/tfidf_model.txt",     #tfidf_path
+        "./recommendAlgo/Model/cv_model.txt")     #cv_path
+    recGameLst = json.loads(reGames)
+    recGameImageNameLst =  gameDataAccess.getGameImageName([x['gameId'] for x in recGameLst])
+    recGameLst = mergeRecGameLstAndImgInfo(recGameLst, recGameImageNameLst);
+
+    return render_template("gameDetail.html", gameDetail = gameDetail,
+        gameImageInfo = gameImageInfo, recGameLst = recGameLst)
 
 @bp.route("/search")
 def searchGame():
@@ -90,13 +114,7 @@ def searchRefreshGameLst():
         #company = json.loads(request.form['company'])
         page = int(request.form['pageIndex'])
         keyword = request.form['keyword']
-        print("Genre:\n")
-        print(str(genre))
-        print("\nPlatform:\n")
-        print(str(platform))
-        print("\ncompany\n")
-        print(str(company))
-        print("\nkeyword:" + keyword + "\npage:" + str(page))
+
         return jsonify(gameDataAccess.getGamePageDetail(page = page, keyword = keyword, genre =genre, company = company, platform = platform))
     else:
         abort(404, "Error")
