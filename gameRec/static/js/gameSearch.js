@@ -58,15 +58,15 @@ function getPageInfo(keyword, pageIndex){
 
 function bindElmEvent() {
   $(".game_search_platform_checkbox")
-    .children("input:first").click(
+    .children("input:first").unbind("click").click(
       function(){getPageInfo(getQueryString('keyword'), 0)});
   $(".game_search_genre_checkbox")
-    .children("input:first").click(
+    .children("input:first").unbind("click").click(
       function(){getPageInfo(getQueryString('keyword'), 0)});
   //$(".game_search_company_checkbox")
   //  .children("input:first").click(
   //// TODO: Add company checkbox event
-  $(".page-number").click(function(){
+  $(".page-number").unbind("click").click(function(){
       getPageInfo(getQueryString('keyword'), Number($(this).attr("value")))
   });
 }
