@@ -66,7 +66,7 @@ def getSearchGameCnt(genre = [], company = [], platform = [], keyword = ""):
         GameDetail AS d INNER JOIN GenreStat AS s WHERE
         d.gameId = s.gameId """
     for i in genre:
-        sqlCommand += (" AND s.%s = 1 "%(i))
+        sqlCommand += (" AND s.[%s] = 1 "%(i))
 
     sqlCommand = '(' + sqlCommand + ')'
     sqlCommand = "SELECT COUNT(*) FROM GameDetail WHERE gameId IN " + sqlCommand;
@@ -96,7 +96,7 @@ def getSearchGameList(page, genre = [], company = [], platform = [], keyword = "
         GameDetail AS d INNER JOIN GenreStat AS s WHERE
         d.gameId = s.gameId """
     for i in genre:
-        sqlCommand += (" AND s.%s = 1 "%(i))
+        sqlCommand += (" AND s.[%s] = 1 "%(i))
 
     sqlCommand = '(' + sqlCommand + ')'
     sqlCommand = "SELECT * FROM GameDetail WHERE gameId IN " + sqlCommand;
