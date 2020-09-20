@@ -37,9 +37,9 @@ def create_app(test_config=None):
 
     # apply the blueprints to the app
     from gameRec import gameLibrary
-
+    from gameRec import gameRecQuestionnaire
     app.register_blueprint(gameLibrary.bp)
-
+    app.register_blueprint(gameRecQuestionnaire.bp)
     # make url_for('index') == url_for('blog.index')
     # in another app, you might define a separate main index here with
     # app.route, while giving the blog blueprint a url_prefix, but for

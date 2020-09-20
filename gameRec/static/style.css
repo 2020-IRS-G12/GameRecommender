@@ -454,7 +454,7 @@ form textarea {
   float: right;
 }
 
-.filter-bar, .pagination-bar {
+.filter-bar, .pagination-bar, .questionnaireBar{
   *zoom: 1;
   background-color: white;
   border-radius: 3px;
@@ -2840,3 +2840,26 @@ table.cart .fa-times {
              opacity             :0.5;
              z-index             :100;
   }
+
+.questionnaire_selitem {
+  width:45%;
+  background: white;
+  padding: 2%;
+  margin: 2%;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  padding-bottom: 1%;
+  float: left;
+  cursor: pointer;
+}
+.questionnaire_selitem_name {
+    color: #666a6c;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    display: block;
+}
+.platform-list .questionnaire_selitem {
+  width:20%;
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+		<title>Ecommerce Video Game | Products</title>
+
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Roboto:100,400,700|" rel="stylesheet" type="text/css">
+		<link href="../static/font/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="../static/font/lineo-icon/style.css" rel="stylesheet" type="text/css">
+
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="../static/style.css">
+
+		<!--[if lt IE 9]>
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
+
+	</head>
+
+
+	<body>
+		<div id="site-content">
+			<div class="site-header">
+				<div class="container">
+					<a href={{url_for('gameLibrary.index')}} id="branding">
+						<img src="../static/image/ecommerce_video_games_htmls/logo.png" alt="" class="logo">
+						<div class="logo-text">
+							<h1 class="site-title">Company name</h1>
+							<small class="site-description">Tagline goes here</small>
+						</div>
+					</a> <!-- #branding -->
+				</div> <!-- .container -->
+			</div> <!-- .site-header -->
+
+			<main class="main-content">
+				<div class="container">
+					<div class="page">
+						<div style="
+							padding-top: 10px;
+							padding-bottom: 10px;
+							text-align: Left;">
+							<h1>Step1</h1>
+							<h2 style = "font-weight: bold">Select your platform</h2>
+							<hr>
+						</div>
+						<ul class="platform-list" style="list-style-type:none">
+								<li>
+									<div class="questionnaire_selitem" type="platform" value="PlayStation4">
+										<img src="../static/image/questionnaire/platform/ps.png" alt="Game 1" style="width: 100%">
+										<small class="questionnaire_selitem_name">PS4</small>
+									</div>
+								</li>
+								<li>
+									<div class="questionnaire_selitem" type="platform" value="XboxOne">
+										<img src="../static/image/questionnaire/platform/xbox.png" alt="Game 1" style="width: 100%">
+										<small class="questionnaire_selitem_name">XBOX ONE</small>
+									</div>
+								</li>
+								<li>
+									<div class="questionnaire_selitem" type="platform" value="Switch">
+										<img src="../static/image/questionnaire/platform/switch.png" alt="Game 1" style="width: 100%">
+										<small class="questionnaire_selitem_name">Switch</small>
+									</div>
+								</li>
+								<li>
+									<div class="questionnaire_selitem" type="platform" value="PC">
+										<img src="../static/image/questionnaire/platform/pc.png" alt="Game 1" style="width: 100%">
+										<small class="questionnaire_selitem_name">PC</small>
+									</div>
+								</li>
+
+						</ul> <!-- .product-list -->
+						<div style="
+							padding-top: 10px;
+							padding-bottom: 10px;
+							text-align: Left;">
+							<h1>Step2</h1>
+							<h2 style = "font-weight: bold">Select some genres</h2>
+							<hr>
+						</div>
+						<ul class="product-list" style="list-style-type:none">
+								<li>
+									<div class="questionnaire_selitem" type="genre" value="Platformer">
+
+										<img src="../static/image/questionnaire/gif/Platformer.gif" alt="Game 1" style="width: 100%">
+
+										<small class="questionnaire_selitem_name">Platformer</small>
+									</div>
+								</li>
+								<li>
+									<div class="questionnaire_selitem" type="genre" value="Shooter">
+
+										<img src="../static/image/questionnaire/gif/Shooter.gif" alt="Game 1" style="width: 100%">
+
+										<small class="questionnaire_selitem_name">Shooter</small>
+									</div>
+								</li>
+								<li>
+									<div class="questionnaire_selitem" type="genre" value="Role-playing">
+
+										<img src="../static/image/questionnaire/gif/Roleplaying.gif" alt="Game 1" style="width: 100%">
+
+										<small class="questionnaire_selitem_name">Roleplaying</small>
+									</div>
+								</li>
+								<li>
+									<div class="questionnaire_selitem" type="genre" value="Strategy">
+
+										<img src="../static/image/questionnaire/gif/Strategy.gif" alt="Game 1" style="width: 100%">
+
+										<small class="questionnaire_selitem_name">Strategy</small>
+									</div>
+								</li>
+								<li>
+									<div class="questionnaire_selitem" type="genre" value="Sports(Competitive Games)">
+
+										<img src="../static/image/questionnaire/gif/Sports(Competitive_Games).gif" alt="Game 1" style="width: 100%">
+
+										<small class="questionnaire_selitem_name">Sports(Competitive Games)</small>
+									</div>
+								</li>
+								<li>
+									<div class="questionnaire_selitem" type="genre" value="Open-world Adventure">
+
+										<img src="../static/image/questionnaire/gif/Openworld_Adventure.gif" alt="Game 1" style="width: 100%">
+
+										<small class="questionnaire_selitem_name">Openworld Adventure</small>
+									</div>
+								</li>
+								<li>
+									<div class="questionnaire_selitem" type="genre" value="Puzzle Adventure">
+
+										<img src="../static/image/questionnaire/gif/Puzzle_Adventure.gif" alt="Game 1" style="width: 100%">
+
+										<small class="questionnaire_selitem_name">Puzzle Adventure</small>
+									</div>
+								</li>
+								<li>
+									<div class="questionnaire_selitem" type="genre" value="Linear Story Adventure">
+
+										<img src="../static/image/questionnaire/gif/Linear_Story_Adventure.gif" alt="Game 1" style="width: 100%">
+
+										<small class="questionnaire_selitem_name">Linear Story Adventure</small>
+									</div>
+								</li>
+						</ul> <!-- .product-list -->
+
+						<div class="pagination-bar">
+							<div class="button" id="submitBtn" style=" padding: 15px; font-weight: bold; cursor: pointer;" url="/recGameLst">
+								Clike Here! Get Recommended Games!
+							</div>
+						</div>
+					</div>
+				</div> <!-- .container -->
+			</main> <!-- .main-content -->
+
+			<div class="site-footer">
+				<div class="container">
+					<div class="colophon">
+						<div class="copy">Copyright 2020 ISS-RS. Designed by Zhang Zekun, Tao Xiyan, Shi Zhaohen. All rights reserved.</div>
+					</div> <!-- .colophon -->
+				</div> <!-- .container -->
+			</div> <!-- .site-footer -->
+		</div>
+
+		<script src="../static/js/ecommerce_video_games_htmls/jquery-1.11.1.min.js"></script>
+		<script src="../static/js/recQuestionnaire.js"></script>
+		<script>
+			$(document).ready(initQuestionnairePage);
+		</script>
+
+	</body>
+
+</html>
