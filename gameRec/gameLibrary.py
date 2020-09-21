@@ -10,7 +10,6 @@ from gameRec import gameDataAccess
 from gameRec.gameDataAccess import dataSingleton
 from gameRec.db import get_db
 from recommendAlgo import ContentRecommendation as cr
-from recommendAlgo import CustomizedRecommendation as cur
 from recommendAlgo import InitializationRecommendation as ir
 import json
 
@@ -55,12 +54,7 @@ def testGenreLst():
 
 #--testcode--
 
-def mergeRecGameLstAndImgInfo(gamelst, imglsts):
-    for i in gamelst:
-        for j  in imglsts:
-            if i['gameId']==j['gameId']:
-                i['imageFileName'] = j['imageFileName']
-    return gamelst
+
 
 INDEX_REC_GAME_NUM = 4
 @bp.route("/")
@@ -68,7 +62,7 @@ def index():
     recommendGame = ir.InitializationRecommendation().getRecommendation(get_db(),INDEX_REC_GAME_NUM)
     recGameLst = json.loads(recommendGame)
     recGameImageNameLst = gameDataAccess.getGameImageName([x['gameId'] for x in recGameLst])
-    recGameLst = mergeRecGameLstAndImgInfo(recGameLst, recGameImageNameLst)
+    recGameLst = gameDataAccess.mergeRecGameLstAndImgInfo(recGameLst, recGameImageNameLst)
     return render_template("index.html", recGameLst = recGameLst)
 
 @bp.route("/gameDetail/<int:gameId>")
@@ -85,7 +79,7 @@ def gameDetail(gameId):
         "./recommendAlgo/Model/cv_model.txt")     #cv_path
     recGameLst = json.loads(reGames)
     recGameImageNameLst =  gameDataAccess.getGameImageName([x['gameId'] for x in recGameLst])
-    recGameLst = mergeRecGameLstAndImgInfo(recGameLst, recGameImageNameLst);
+    recGameLst = gameDataAccess.mergeRecGameLstAndImgInfo(recGameLst, recGameImageNameLst);
 
     return render_template("gameDetail.html", gameDetail = gameDetail,
         gameImageInfo = gameImageInfo, recGameLst = recGameLst)

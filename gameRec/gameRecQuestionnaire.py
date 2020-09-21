@@ -5,6 +5,8 @@ from flask import render_template
 from flask import request
 from flask import url_for
 from flask import jsonify
+from gameRec.db import get_db
+from gameRec import gameDataAccess
 
 bp = Blueprint("gameRecQuestionnaire", __name__)
 
@@ -19,9 +21,14 @@ def recGameLst():
         #pdb.set_trace();
         import json
         info =  json.loads(request.form['questionnaireJsonInfo'])
-        print(info)
-        return str(info);
-
-
+        #print(info)
+        from recommendAlgo import CustomizedRecommendation as customRec
+        recGameJson = customRec.CustomizedRecommendation().getRecommendation(get_db(), info['selPlatformSet'], info['selGenreSet'],16)
+        recGameLst = json.loads(recGameJson)
+        recGameImageNameLst =  gameDataAccess.getGameImageName([x['gameId'] for x in recGameLst])
+        recGameLst = gameDataAccess.mergeRecGameLstAndImgInfo(recGameLst, recGameImageNameLst);
+        selectionStr = ', '.join(info['selPlatformSet']) + ', ' + ', '.join(info['selGenreSet'])
+        return render_template("recGameLst.html", recGameLst = recGameLst, selectionStr = selectionStr)
+        #return str(recGameLst);
     else:
         abort(404, "Error")

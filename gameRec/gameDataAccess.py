@@ -170,3 +170,10 @@ def getGamePageDetail(page, keyword="", genre=[], platform=[], company=[]):
 
 
     return retVal
+
+def mergeRecGameLstAndImgInfo(gamelst, imglsts):
+    for i in gamelst:
+        for j  in imglsts:
+            if i['gameId']==j['gameId']:
+                i['imageFileName'] = j['imageFileName']
+    return gamelst
