@@ -2174,7 +2174,7 @@ form textarea {
 }
 
 .search-form {
-  float: left;
+  float: right;
   right: 0;
   top: 0;
   bottom: 0;
