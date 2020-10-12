@@ -1,0 +1,4 @@
+*FEATURE*
+Cookie based recommendation
+High resolution picture(Automation)
+Popularity in game detail
