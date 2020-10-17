@@ -118,9 +118,28 @@
 		</div> <!-- .auth-popup -->
 
 		<script src="../static/js/ecommerce_video_games_htmls/jquery-1.11.1.min.js"></script>
+		<script src="../static/js/ecommerce_video_games_htmls/js.cookie.js"></script>
 		<script src="../static/js/ecommerce_video_games_htmls/plugins.js"></script>
 		<script src="../static/js/ecommerce_video_games_htmls/app.js"></script>
 		<script src="../static/js/gameSearch.js"></script>
+		<!--<script src="../static/js/recordCookies.js"></script>-->
+		<script>
+			$(document).ready(function(){
+				var gameName = "Game_" + "{{gameDetail['gameId']}}" + "_" + "{{gameDetail['title']}}";
+				var cookieVal = Cookies.get(gameName);
+				if(cookieVal === undefined) {
+					console.log("Set new cookie for: " + gameName.toString());
+					Cookies.set(gameName, '1', { expires: 7, path: '/' })
+				}
+				else {
+					cookieVal = Number(cookieVal);
+					cookieVal += 1;
+					Cookies.set(gameName, cookieVal.toString(), { expires: 7, path: '/' })
+				}
+				//recordGamesCookies();
+			});
+
+		</script>
 	</body>
 
 </html>

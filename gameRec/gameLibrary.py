@@ -10,7 +10,7 @@ from gameRec import gameDataAccess
 from gameRec.gameDataAccess import dataSingleton
 from gameRec.db import get_db
 from recommendAlgo import ContentRecommendation as cr
-from recommendAlgo import InitializationRecommendation as ir
+from recommendAlgo import FrontPageRecommendation as fr
 import json
 
 bp = Blueprint("gameLibrary", __name__)
@@ -59,11 +59,27 @@ def testGenreLst():
 INDEX_REC_GAME_NUM = 4
 @bp.route("/")
 def index():
-    recommendGame = ir.InitializationRecommendation().getRecommendation(get_db(),INDEX_REC_GAME_NUM)
+
+    cookiesGameArr = []
+
+    for k in request.cookies:
+        if "Game_" in k:
+            gameId = k.split("_")[1]
+            cookiesGameArr.append((int(request.cookies[k]), int(gameId)))
+
+    cookiesGameArr.sort(reverse = True)
+    for i in range(0, len(cookiesGameArr)):
+        cookiesGameArr[i] = cookiesGameArr[i][1];
+
+    print(cookiesGameArr)
+    recommendGame = fr.FrontPageRecommendation().getRecommendation(get_db(), cookiesGameArr, INDEX_REC_GAME_NUM,
+        "./recommendAlgo/Model/tfidf_model.txt",
+        "./recommendAlgo/Model/cv_model.txt")
     recGameLst = json.loads(recommendGame)
     recGameImageNameLst = gameDataAccess.getGameImageName([x['gameId'] for x in recGameLst])
     recGameLst = gameDataAccess.mergeRecGameLstAndImgInfo(recGameLst, recGameImageNameLst)
     return render_template("index.html", recGameLst = recGameLst)
+
 
 @bp.route("/gameDetail/<int:gameId>")
 def gameDetail(gameId):
