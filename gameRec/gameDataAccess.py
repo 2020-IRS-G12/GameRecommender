@@ -61,6 +61,12 @@ def getSearchGameCnt(genre = [], company = [], platform = [], keyword = ""):
         sqlCommand +="""
             SELECT gameId FROM GameDetail WHERE platform IN (%s)
             INTERSECT """ % (','.join([("'"+p+"'") for p in platform]))
+    if keyword != "":
+        sqlCommand +="""
+            SELECT gameId FROM searchGameTable WHERE title MATCH ('%s')
+            OR genre MATCH ('%s')
+            OR description MATCH ('%s')
+            INTERSECT """ % (keyword, keyword, keyword)
 
     sqlCommand += """SELECT d.gameId FROM
         GameDetail AS d INNER JOIN GenreStat AS s WHERE
@@ -70,8 +76,10 @@ def getSearchGameCnt(genre = [], company = [], platform = [], keyword = ""):
 
     sqlCommand = '(' + sqlCommand + ')'
     sqlCommand = "SELECT COUNT(*) FROM GameDetail WHERE gameId IN " + sqlCommand;
-    if keyword != "":
-        sqlCommand += " AND title LIKE '%" + keyword + "%' "
+
+    #if keyword != "":
+    #    sqlCommand += " AND title LIKE '%" + keyword + "%' "
+
     #print(sqlCommand)
     result = db.execute(sqlCommand)
     result = result.fetchone()['count(*)']
@@ -91,6 +99,12 @@ def getSearchGameList(page, genre = [], company = [], platform = [], keyword = "
         sqlCommand +="""
             SELECT gameId FROM GameDetail WHERE platform IN (%s)
             INTERSECT """ % (','.join([("'"+p+"'") for p in platform]))
+    if keyword != "":
+        sqlCommand +="""
+            SELECT gameId FROM searchGameTable WHERE title MATCH ('%s')
+            OR genre MATCH ('%s')
+            OR description MATCH ('%s')
+            INTERSECT """ % (keyword, keyword, keyword)        
 
     sqlCommand += """SELECT d.gameId FROM
         GameDetail AS d INNER JOIN GenreStat AS s WHERE
@@ -100,8 +114,8 @@ def getSearchGameList(page, genre = [], company = [], platform = [], keyword = "
 
     sqlCommand = '(' + sqlCommand + ')'
     sqlCommand = "SELECT * FROM GameDetail WHERE gameId IN " + sqlCommand;
-    if keyword != "":
-        sqlCommand += " AND title LIKE '%" + keyword + "%' "
+    # if keyword != "":
+    #     sqlCommand += " AND title LIKE '%" + keyword + "%' "
 
     sqlCommand += " ORDER BY score DESC "
     sqlCommand += " LIMIT " + str(ITEM_ONE_PAGE) + " OFFSET " + str(ITEM_ONE_PAGE * page)

@@ -102,7 +102,8 @@ def gameDetail(gameId):
 
 @bp.route("/search")
 def searchGame():
-    return render_template("gameLst.html")
+    searchKeyword = request.args.get('keyword')
+    return render_template("gameLst.html", searchKeyword = searchKeyword)
 
 @bp.route("/searchInitGameLst", methods=['POST'])
 def initGameLstPage():
