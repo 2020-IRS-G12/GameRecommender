@@ -14,6 +14,7 @@
 
 		<!-- Loading main css file -->
 		<link rel="stylesheet" href="../static/style.css">
+		<link rel="stylesheet" href="../static/button.css">
 
 		<!--[if lt IE 9]>
 		<script src="js/ie-support/html5.js"></script>
@@ -25,6 +26,7 @@
 	<body class="slider-collapse">
 		<div id="site-content">
 			<div class="site-header">
+
 				<div class="container">
 					<a href={{url_for('gameLibrary.index')}} id="branding">
 						<img src="../static/image/ecommerce_video_games_htmls/logo.png" alt="" class="logo">
@@ -33,10 +35,20 @@
 							<small class="site-description">Your video game recommender</small>
 						</div>
 					</a>
+					<a href={{url_for('gameRecQuestionnaire.fillQuestionnire')}}>
+					<button style="--content: 'What more games? Try recommender!';">
+  					<div class="left"></div>
+    					What more games? Try recommender!
+  					<div class="right"></div>
+					</button>
+					</a>
+
+					
+
 					<div class="main-navigation">
 						<div class="search-form">
 							<label id="search_btn"><img src="../static/image/ecommerce_video_games_htmls/icon-search.png"></label>
-							<input type="text" id="search_text" placeholder="Search...">
+							<input type="text" id="search_text" placeholder="Search (Enter Keywords of Game Title, Description, Genre)...">
 						</div>
 					</div><br>
 				</div>
@@ -120,9 +132,7 @@
 							</div> <!-- .product-list -->
 
 						</section>
-						<a class="button" style=" padding: 15px; font-weight: bold;" href={{url_for('gameRecQuestionnaire.fillQuestionnire')}}>
-							What more games? Try our recommender!
-						</a>
+
 
 					</div>
 				</div> <!-- .container -->
@@ -149,7 +159,7 @@
 		<script src="../static/js/ecommerce_video_games_htmls/app.js"></script>
 		<script src="../static/js/ecommerce_video_games_htmls/js.cookie.js"></script>
 		<script src="../static/js/gameSearch.js"></script>
-		
+
 	</body>
 
 </html>
