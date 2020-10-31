@@ -36,7 +36,7 @@ From this point of view, the future of the gaming platform is still full of unli
 
 ## SECTION 5 : USER GUIDE
 
-`Refer to appendix User Guide in project report at Github Folder: ProjectReport` <a href="https://github.com/hedink/Test/blob/main/ProjectReport/User%20Guide.docx">click here</a>
+`Refer to appendix User Guide in project report at Github Folder: ProjectReport` <a href="https://github.com/2020-IRS-G12/GameRecommender/blob/master/ProjectReport/User%20Guide.pdf">click here</a>
 
 ---
 
