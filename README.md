@@ -22,7 +22,7 @@ From this point of view, the future of the gaming platform is still full of unli
 | Official Full Name  | Student ID (MTech Applicable)  | Work Items (Who Did What) | Email (Optional) |
 | :------------ |:---------------:| :-----| :-----|
 | Tao Xiyan | A0215472J |Overall system implementation and validation, project management and documentation | e0535562@u.nus.edu |
-| Zhang Zekun | A0215485B |Overall system design, modelling, use case & algorithm design, system implementation | zhang_zekun@u.nus.edu |
+| Zhang Zekun | A0215485B |Overall system design, Crawler & RPA agent implementation, use case & algorithm design, system implementation | zhang_zekun@u.nus.edu |
 | Shi Zhaoheng | A0215413U |Recommendation algorithm design, recommendation system design, data preprocessing, documentation | e0535503@u.nus.edu |
 
 ---
