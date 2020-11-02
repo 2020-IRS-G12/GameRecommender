@@ -41,6 +41,7 @@ From this point of view, the future of the gaming platform is still full of unli
 `Refer to appendix User Guide in project report at Github Folder: ProjectReport` <a href="https://github.com/2020-IRS-G12/GameRecommender/blob/master/ProjectReport/User%20Guide.pdf">click here</a>
 
 `If you want to deploy this project on your local machine. Refer to appendix Local Install Guide in project report at Github Folder: ProjectReport` <a href="https://github.com/2020-IRS-G12/GameRecommender/blob/master/ProjectReport/LocalInstallationGuide.pdf">click here</a>
+
 ---
 
 ## SECTION 6 : PROJECT REPORT / PAPER
