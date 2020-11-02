@@ -29,7 +29,7 @@ From this point of view, the future of the gaming platform is still full of unli
 
 ## SECTION 4 : VIDEO OF SYSTEM MODELLING & USE CASE DEMO
 <div align="center">
-  <a href="https://onedrive.live.com/?authkey=%21ACTFIiM2IjIR1vI&cid=16C7FE8BA834E5DC&id=16C7FE8BA834E5DC%21918&parId=16C7FE8BA834E5DC%21804&o=OneUp">
+  <a href="https://www.youtube.com/watch?v=usCuSVxOk5s">
     <img src="https://zekunsgames.oss-us-west-1.aliyuncs.com/p1Title.png" alt="Project Introduction Video">
   </a>
 </div>
@@ -46,7 +46,7 @@ From this point of view, the future of the gaming platform is still full of unli
 
 ## SECTION 6 : PROJECT REPORT / PAPER
 
-`Refer to Project Report at Github Folder: ProjectReport` <a href="https://github.com/hedink/Test/blob/main/ProjectReport/Project%20Report.docx">click here</a>
+`Refer to Project Report at Github Folder: ProjectReport` <a href="https://github.com/2020-IRS-G12/GameRecommender/blob/master/ProjectReport/IRS-2020-07-10-Stackable1-GRP12-HazelnutGames_GameRecommender.pdf">click here</a>
 
 ---
 
