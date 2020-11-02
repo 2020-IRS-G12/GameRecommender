@@ -1,6 +1,8 @@
 ## SECTION 1 : PROJECT TITLE
 ## Hazelnut Games
-
+<div align="center">
+  <img src="https://zekunsgames.oss-us-west-1.aliyuncs.com/p1_intro_img.png" alt="Project Title">
+</div>
 ---
 
 ## SECTION 2 : EXECUTIVE SUMMARY / PAPER ABSTRACT
@@ -28,7 +30,7 @@ From this point of view, the future of the gaming platform is still full of unli
 ## SECTION 4 : VIDEO OF SYSTEM MODELLING & USE CASE DEMO
 <div align="center">
   <a href="https://onedrive.live.com/?authkey=%21ACTFIiM2IjIR1vI&cid=16C7FE8BA834E5DC&id=16C7FE8BA834E5DC%21918&parId=16C7FE8BA834E5DC%21804&o=OneUp">
-    <img src="https://onedrive.gimhoy.com/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBbXl4Tk9MYy1PU2FqSEtQdUl4ZGl2a3NmUDQw.jpg" alt="Project Introduction Video">
+    <img src="https://zekunsgames.oss-us-west-1.aliyuncs.com/p1Title.png" alt="Project Introduction Video">
   </a>
 </div>
 
@@ -37,7 +39,7 @@ From this point of view, the future of the gaming platform is still full of unli
 ## SECTION 5 : USER GUIDE
 
 `Refer to appendix User Guide in project report at Github Folder: ProjectReport` <a href="https://github.com/2020-IRS-G12/GameRecommender/blob/master/ProjectReport/User%20Guide.pdf">click here</a>
-
+`If you want to deploy this project on your local machine. Refer to appendix Local Install Guide in project report at Github Folder: ProjectReport` <a href="https://github.com/2020-IRS-G12/GameRecommender/blob/master/ProjectReport/LocalInstallationGuide.pdf">click here</a>
 ---
 
 ## SECTION 6 : PROJECT REPORT / PAPER
@@ -48,7 +50,8 @@ From this point of view, the future of the gaming platform is still full of unli
 
 ## SECTION 7 : MISCELLANEOUS
 
-`Refer to Github Folder: Miscellaneous` <a href="https://github.com/hedink/Test/blob/main/ProjectReport/Project%20Report.docx">click here</a>
+`Repository of Web Crawler` <a href="https://github.com/thezzk/MetacriticSpider">click here</a>
+`Repository of Image RPA Agent` <a href="https://github.com/thezzk/HDImageRobot">click here</a>
 
 ---
 
